@@ -1,7 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 
 import { ButtonLoadMore } from "../Button/Button";
-import { ImageGallery } from "../ImageGallery/ImageGallery";
 import { Header } from "../Header/Header";
 import { Loader } from "../Loader/Loader";
 import { Modal } from "../Modal/Modal";
@@ -9,6 +8,7 @@ import PixabayApi from "../../api/PixabayApi";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import css from "./App.module.css";
+import TopPositions from "components/Swiper/Swiper";
 
 export const App = () => {
   const [pictures, setImages] = useState([]);
@@ -68,9 +68,7 @@ export const App = () => {
   return (
     <div className={css.App}>
       <Header onSubmit={onChangeQuery} />
-      <div>
-        <ImageGallery pictures={pictures} onClick={toggleModal} />
-      </div>
+      <TopPositions />
       <span className={css.Button_wrapper}>
         {pictures.length % 12 < 1 && pictures.length > 0 && (
           <ButtonLoadMore onClick={handleClickMoreBtn} />

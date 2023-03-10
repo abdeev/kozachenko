@@ -2,12 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 // import { Link } from "react-router-dom";
 
-const ButtonMailto = ({ mailto, label }) => {
+const ButtonPhoneto = ({ tel, label }) => {
   return (
     <Link
       to="/"
       onClick={(e) => {
-        window.location.href = mailto;
+        window.location.href = tel;
         e.preventDefault();
       }}
     >
@@ -16,4 +16,4 @@ const ButtonMailto = ({ mailto, label }) => {
   );
 };
 
-export default ButtonMailto;
+export default ButtonPhoneto;

@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
-import ButtonMailto from "../ButtonMailto/ButtonMailto";
 import { ReactComponent as IconSearch } from "../../static/img/IconSearch.svg";
+import { ContactUs } from "components/ContactUs/ContactUs";
 import Logo from "../../static/img/logoKozachenko.png";
 import { toast } from "react-toastify";
 import css from "./Header.module.css";
@@ -32,10 +32,7 @@ export const Header = ({ onSubmit }) => {
 
   return (
     <header className={css.Header}>
-      <ButtonMailto
-        mailto="mailto:no-reply@example.com"
-        label="Write me an E-Mail"
-      />
+      <ContactUs />
       <img src={Logo} alt="main logo Kozachenko" className={css.Logo} />
       <form className={css.SearchForm} onSubmit={handleSubmit}>
         <button type="submit" className={css.SearchForm_button}>
@@ -49,7 +46,7 @@ export const Header = ({ onSubmit }) => {
           autoFocus
           name="search"
           onChange={handleChange}
-          placeholder="Search images and photos"
+          placeholder="Введіть назву товару..."
         />
       </form>
     </header>
